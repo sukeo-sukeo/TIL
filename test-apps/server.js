@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
 
 //じゃんけんプログラム
 require("./janken/janken-node.js")();
-require("./date/date-node.js");
+// require("./date/date-node.js").default;
 
 server.listen(3000, () => {
   console.log("listening port 3000!");
