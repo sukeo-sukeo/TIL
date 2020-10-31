@@ -1,7 +1,6 @@
 'use strict';
 
 //node.jsパターン
-
 const Message = {
   win: 'あなたの勝ちです',
   lose: 'あなたの負けです',
