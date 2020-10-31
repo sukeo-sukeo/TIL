@@ -1,6 +1,10 @@
 'use strict';
 
 //node.jsパターン
+const arry = [true, false, true];
+const result = arry.filter((x) => x === true).length;
+console.log(result);
+
 const Message = {
   win: 'あなたの勝ちです',
   lose: 'あなたの負けです',

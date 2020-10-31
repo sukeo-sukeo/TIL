@@ -1,7 +1,6 @@
 'use strict';
 
 //配列パターン
-
 const btns = document.querySelectorAll('button');
 
 const Message = {
