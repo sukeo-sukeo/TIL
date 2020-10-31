@@ -1,10 +1,6 @@
 'use strict';
 
 //node.jsパターン
-const lines = [1, 2, 3, 4, 5];
-const linesCopy = [...lines].reverse()
-console.log(lines)
-console.log(linesCopy)
 
 const Message = {
   win: 'あなたの勝ちです',

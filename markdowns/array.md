@@ -32,3 +32,35 @@ const result = arry.filter((x) => x === true).length;
 console.log(result); // 2
 ```
 
+## ソート
+>関数の戻り値が正の時　→　引数1を引数2の後ろに並べ替え。  
+>関数の戻り値が負の時　→　引数1を引数2の前に並べ替え。  
+>関数の戻り値が0の時　→　何もしない。  
+
+降順 【return b - a】
+```js
+const arry = [3, 1, 2]
+arry.sort((a, b) => {
+      return b - a
+  })
+console.log(arry) //[3, 2, 1]
+//引数aに[1]から順番に入っていく  
+//引数b？  
+```
+昇順 【return a - b】
+```js
+const arry = [3, 1, 2]
+arry.sort((a, b) => {
+      return a - b
+  })
+console.log(arry) //[1, 2, 3]
+```
+配列の特定のインデックスの要素で並べ替え
+```js
+//arry[1]の降順で並び替えたい
+const arry = [[2, 1], [1, 2]]
+arry.sort((a, b) => {
+  return b[1] - a[1];
+})
+console.log(arry) //[[1, 2],[2, 1]]
+```
