@@ -10,24 +10,34 @@ arry.sort((a, b) => {
 //引数b？
 
 
-new Promise((resolve, reject) => {
-  console.log('promise');
-  // resolve('hello')
-  reject('bye')
-}).then((data) => {
-  console.log('then:' + data);
-  // throw new Error()
-  return data
-}).then((data) => {
-  console.log('then:' + data);
-}).catch((data) => {
-  console.log('catch:' + data);
-}).finally((data) => {
-  console.log('finally');
-})
+// new Promise((resolve, reject) => {
+//   console.log('promise');
+//   // resolve('hello')
+//   reject('bye')
+// }).then((data) => {
+//   console.log('then:' + data);
+//   // throw new Error()
+//   return data
+// }).then((data) => {
+//   console.log('then:' + data);
+// }).catch((data) => {
+//   console.log('catch:' + data);
+// }).finally((data) => {
+//   console.log('finally');
+// })
+// console.log(('global end'));
+
+const data = ["sukeo 1", "oja 5", "chee 3", "sukeo"];
+const s = data.pop();
+const dict = {}
+data.forEach((v) => {
+  dict[v.split(' ')[0]] = v.split(' ')[1]
+});
+console.log(dict[s]);
 
 
-console.log(('global end'));
+
+
 
 // const fn1 = (n) => {
 //   return new Promise((resolve, reject) => {

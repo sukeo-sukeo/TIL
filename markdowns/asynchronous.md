@@ -11,7 +11,7 @@ new Promise((resolve, reject) => {
   console.log('then:' + data);
 }).catch((data) => {
   console.log('catch');
-}).finally((data) => {
+}).finally((data) => {   //finallyは必ず呼ばれる
   console.log('finally');
 })
 //>>>log
@@ -21,7 +21,6 @@ new Promise((resolve, reject) => {
 //then:hello
 //finally
 ```
-
 
 ## promise.all
 ```js
