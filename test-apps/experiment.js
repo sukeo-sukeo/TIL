@@ -27,16 +27,25 @@ arry.sort((a, b) => {
 // })
 // console.log(('global end'));
 
+// const data = ["sukeo 1", "oja 5", "chee 3", "sukeo"];
+// const s = data.pop();
+// const dict = {}
+// data.forEach((v) => {
+//   dict[v.split(' ')[0]] = v.split(' ')[1]
+// });
+// console.log(dict[s]);
+
 const data = ["sukeo 1", "oja 5", "chee 3", "sukeo"];
 const s = data.pop();
-const dict = {}
+const dict = new Map();
 data.forEach((v) => {
-  dict[v.split(' ')[0]] = v.split(' ')[1]
+  //set('key','value')でdictにkey&valueをセットする
+  dict.set(v.split(" ")[0], v.split(" ")[1]);
 });
-console.log(dict[s]);
-
-
-
+//get(s)で'sukeo'がKeyとなっている値をゲットする
+// console.log(dict.get(s));
+console.log(dict.size);
+dict.forEach(v => console.log(v))
 
 
 // const fn1 = (n) => {
