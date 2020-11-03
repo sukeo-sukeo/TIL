@@ -5,20 +5,20 @@
 - イテレータブル（反復可能）
 - 頻繁に値を変更したりする場合はobjectよりMapが適している
 
-### 配列末尾の文字に対応する値を取り出したい  
+### 配列末尾の文字に対応する値を取り出す
 ```js
 const data = ['sukeo 1', 'kuu 5', 'chee 3', 'sukeo']
 const s = data.pop()
 const dict = new Map()
 data.forEach(v => {
-  //set('key','value')でdictにkey&valueをセットする
+  //set('key','value')でdictにkey => valueの形でセットできる
     dict.set(v.split(' ')[0], v.split(' ')[1])
 })
+
 console.log(dict)
 //  Map(3) {"sukeo" => "1", "kuu" => "5", "chee" => "3"}
-```
-### get(s)で'sukeo'がKeyとなっている値をゲット
-```js
+
+// get(s)で'sukeo'がKeyとなっている値をゲット
 console.log(dict.get(s)) // 1
 ```
 ***
@@ -34,10 +34,8 @@ data.forEach((v) => {
 
 console.log(dict)
 // {sukeo: "1", kuu: "5", chee: "3"}
-```
 
-### sukeoがkeyとなっている値を取得
-```js
+//sukeoがkeyとなっている値を取得
 console.log(dict[s]) // 1
 ```
 ***
