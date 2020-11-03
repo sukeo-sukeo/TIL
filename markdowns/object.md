@@ -65,11 +65,15 @@ console.log(dict)
 - `変数名.size`で`arry.length`のように長さを取得できる
 - イテレータブルなので`forEach`などのarryのメソッドで値を反復可能
 - objectの場合は`Object.keys(object)`でキーを取り出して反復させる
+
+長さを取得
 ```js
 //dict = Map(3) {"sukeo" => "1", "kuu" => "5", "chee" => "3"}
 
 console.log(dict.size)   // 3
 ```
+
+イテレータブル
 ```js
 //dict = Map(3) {"sukeo" => "1", "kuu" => "5", "chee" => "3"}
 
