@@ -35,18 +35,25 @@ arry.sort((a, b) => {
 // });
 // console.log(dict[s]);
 
-const data = ["sukeo 1", "oja 5", "chee 3", "sukeo"];
-const s = data.pop();
-const dict = new Map();
-data.forEach((v) => {
-  //set('key','value')でdictにkey&valueをセットする
-  dict.set(v.split(" ")[0], v.split(" ")[1]);
-});
-//get(s)で'sukeo'がKeyとなっている値をゲットする
-// console.log(dict.get(s));
-console.log(dict.size);
-dict.forEach(v => console.log(v))
+// const data = ["sukeo 1", "oja 5", "chee 3", "sukeo"];
+// const s = data.pop();
+// const dict = new Map();
+// data.forEach((v) => {
+//   //set('key','value')でdictにkey&valueをセットする
+//   dict.set(v.split(" ")[0], v.split(" ")[1]);
+// });
+// //get(s)で'sukeo'がKeyとなっている値をゲットする
+// // console.log(dict.get(s));
+// console.log(dict.size);
+// dict.forEach(v => console.log(v))
 
+const data = ['sukeo 1', 'kuu 5', 'chee 3', 'sukeo']
+const s = data.pop();
+const dict = {}
+data.forEach((v) => {
+  dict[v.split(' ')[0]] = v.split(' ')[1]
+});
+console.log(dict) // 1
 
 // const fn1 = (n) => {
 //   return new Promise((resolve, reject) => {
