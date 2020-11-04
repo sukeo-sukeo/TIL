@@ -61,6 +61,25 @@ console.log(dict)
 ```
 ***
 
+### keyを取得する①
+`変数名.keys()`を使う
+```js
+console.log(dict.keys())
+
+for (let key of name_dict.keys()) {
+        console.log(key)
+    }
+//dict.keys()はforEachでは回せなかった
+```
+### keyを取得する②
+`forEach()`を使う  
+引数は`(value, key)`の順となる
+```js
+dict.forEach((value, key) => {
+  console.log(key, value)
+})
+```
+
 ## 補足
 - `変数名.size`で`arry.length`のように長さを取得できる
 - イテレータブルなので`forEach`などのarryのメソッドで値を反復可能
