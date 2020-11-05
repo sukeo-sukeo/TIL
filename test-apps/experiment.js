@@ -47,13 +47,20 @@ arry.sort((a, b) => {
 // console.log(dict.size);
 // dict.forEach(v => console.log(v))
 
-const data = ['sukeo 1', 'kuu 5', 'chee 3', 'sukeo']
-const s = data.pop();
-const dict = {}
-data.forEach((v) => {
-  dict[v.split(' ')[0]] = v.split(' ')[1]
-});
-console.log(dict) // 1
+// const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+let n = 5;
+let num = null;
+
+let i = 0
+while (true) {
+  if (i === n) {
+    num = i;
+    break;
+  }
+  i++;
+}
+console.log(num);
 
 // const fn1 = (n) => {
 //   return new Promise((resolve, reject) => {
