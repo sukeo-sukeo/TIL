@@ -5,3 +5,11 @@ arry.join().split(' ')
 //join は arry
 //split は string に対して
 ```
+***
+## 文字を取得する
+```js
+const str = 'abcd'
+const n = 3
+console.log(str.substr(0, n))
+// abc
+```
