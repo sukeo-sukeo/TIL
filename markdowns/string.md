@@ -6,10 +6,32 @@ arry.join().split(' ')
 //split は string に対して
 ```
 ***
-## 文字を取得する
+## 文字列を取得する
 ```js
 const str = 'abcd'
 const n = 3
 console.log(str.substr(0, n))
 // abc
+```
+***
+## 文字列を検索する
+検索対象文字列があれば`true`なければ`false`を返す
+```js
+const str = 's'
+const name = 'sukeo'
+if (name.includes(str)) {
+  console.log("YES");
+} else {
+  console.log("NO");
+}
+// YES
+```
+## 文字列`'03'`をNumber型に型変換すると`3`になる
+```js
+const nums = ['03', '10']
+console.log(Number(nums[0]))
+console.log(Number(nums[1]))
+
+// 3
+// 10
 ```

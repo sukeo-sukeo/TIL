@@ -64,3 +64,42 @@ arry.sort((a, b) => {
 })
 console.log(arry) //[[1, 2],[2, 1]]
 ```
+
+`arry[i][0]`で昇順に並べ替える。  
+`arry[i][0]`が等しい場合は`arr[i][1]`で昇順に並べ替える。
+
+```js
+const arry = [[2, 2], [2, 3], [3, 1]]
+
+//まずarry[i][0]を昇順に並べ替え
+arry.sort((a, b) => {
+  return b[0] - a[0];
+})
+
+//次にarry[i][0]が等しい場合はarry[i][1]を昇順に並べ替え
+arry.sort((a, b) => {
+  if (b[0] === a[0]) {
+    return b[1] - a[1];
+  }
+})
+
+console.log(arry)
+// [ [ 3, 1 ], [ 2, 3 ], [ 2, 2 ] ]
+```
+***
+## 配列のすべての要素の文字列の有無を調べる
+stringのメソッド`includes`とループを組み合わせる
+```js
+const str = 's'
+const names = ['sukeo', 'tanaka', 'suzuki']
+
+names.forEach(name => {
+  if (name.includes(str)) {
+    console.log("YES");
+  } else {
+    console.log("NO");
+  }
+})
+
+// YES NO YES
+```
