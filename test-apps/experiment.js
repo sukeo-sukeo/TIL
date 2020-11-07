@@ -49,18 +49,18 @@ arry.sort((a, b) => {
 
 // const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-let n = 5;
-let num = null;
-
-let i = 0
-while (true) {
-  if (i === n) {
-    num = i;
-    break;
-  }
-  i++;
+const n = Number(111114);
+if (n % 2) {
+  //nが奇数のときはあまりが１なのでtrue
+  console.log("奇数");
+} else {
+  //nが偶数のときはあまりが0なのでfalse
+  console.log("偶数");
 }
-console.log(num);
+//この方法であれば"非破壊"の挙動となる
+// const linesRevers = [...lines].reverse()
+// console.log(lines) // [1, 2, 3, 4, 5]
+// console.log(linesRevers) // [ 5, 4, 3, 2, 1]
 
 // const fn1 = (n) => {
 //   return new Promise((resolve, reject) => {
