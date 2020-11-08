@@ -28,3 +28,10 @@ while (true) {
 }
 console.log(num); // 5
 ```
+***
+## DOMをクリアする
+```js
+while (data_wrapper.firstChild) {
+    data_wrapper.removeChild(data_wrapper.firstChild);
+  }
+```
