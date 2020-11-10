@@ -39,28 +39,29 @@ const create_textContent = (elementName, content, parentNode) => {
 //createTag(string, arry(boolean), string(boolean), string(boolean or null))
 const createTag = (elementName, attr, content, parentNode) => {
   const el = document.createElement(elementName)
-  if (attr !== false && typeof attr === 'string' || attr.length % 2 === Number(1)) {
-    console.error('第２引数は配列、ペアでお願いします[attribute, attributeName]');
-    return
-  }
+
   if (attr !== false) {
+    if (typeof attr === "string" || attr.length % 2 === Number(1)) {
+      console.error(
+        "第２引数は配列、ペアでお願いします[attribute, attributeName]"
+      );
+      return;
+    }
     if (typeof attr[0] === 'object') {
+      console.log(attr);
       attr.forEach(v => {
         el.setAttribute(v[0], v[1])
       })
     } else {
-      console.log(attr);
       el.setAttribute(attr[0], attr[1])
     }
   }
-  if (content) {
-    el.textContent = content
-  }
-  if (parentNode) {
-    parentNode.appendChild(el)
-  } else {
-    return el
-  }
+
+  if (content) el.textContent = content
+
+  if (parentNode) parentNode.appendChild(el)
+
+  return el
 }
 ```
 サンプル
