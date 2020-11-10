@@ -9,7 +9,10 @@
   dl {
     display: flex;
   }
-  #flag {
+  button, select {
+    cursor: pointer;
+  }
+  .flag {
     margin-top: 50px;
     width: 100%;
     max-width: 250px;
@@ -18,7 +21,12 @@
 </style>
 <body>
   <h1>Hello World!</h1>
-  <input id="cauntry_input_box" type="text"><button style="cursor: pointer;">Hello World!</button><br/>
+  <p id="cauntry_count"></p>
+  <select id="sub_region">
+  </select>
+  <input id="cauntry_input_box" type="text"><button id="cauntry_name">Hello World!</button>
+  <button id="all_cauntry">すべての国</button>
+  <br/>
   <div id="cauntry_data_wrapper">
 
   </div>

@@ -30,3 +30,42 @@ const create_textContent = (elementName, content, parentNode) => {
   parentNode.appendChild(el);
 }
 ```
+***
+## 改良版：より抽象化したHTMLタグを作成する関数
+引数はタグ名、属性名([属性のタイプ、属性の名前])、テキスト、追加する親ノード  
+- 属性名、テキストが必要ないときは`false`を入れてください
+- 親ノードの入力がない場合は要素をリターンするので変数に受け取って加工を続けることができます
+```js
+//createTag(string, arry(boolean), string(boolean), string(boolean or null))
+const createTag = (elementName, attr, content, parentNode) => {
+  const el = document.createElement(elementName)
+  if (attr !== false && typeof attr === 'string' || attr.length % 2 === Number(1)) {
+    console.error('第２引数は配列、ペアでお願いします[attribute, attributeName]');
+    return
+  }
+  console.log(typeof attr[0]);
+  if (attr !== false) {
+    if (typeof attr[0] === 'object') {
+      console.log(attr);
+      attr.forEach(v => {
+        el.setAttribute(v[0], v[1])
+      })
+    } else {
+      console.log(attr);
+      el.setAttribute(attr[0], attr[1])
+    }
+  }
+  if (content) {
+    el.textContent = content
+  }
+  if (parentNode) {
+    parentNode.appendChild(el)
+  } else {
+    return el
+  }
+}
+```
+サンプル
+```js
+createTag('p', false, `国名: ${el.name}`, DATA_WRAPPER)
+```
