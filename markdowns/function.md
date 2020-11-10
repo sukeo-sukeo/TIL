@@ -43,10 +43,8 @@ const createTag = (elementName, attr, content, parentNode) => {
     console.error('第２引数は配列、ペアでお願いします[attribute, attributeName]');
     return
   }
-  console.log(typeof attr[0]);
   if (attr !== false) {
     if (typeof attr[0] === 'object') {
-      console.log(attr);
       attr.forEach(v => {
         el.setAttribute(v[0], v[1])
       })
