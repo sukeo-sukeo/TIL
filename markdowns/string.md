@@ -35,3 +35,9 @@ console.log(Number(nums[1]))
 // 3
 // 10
 ```
+## 文字列を置き換える
+`hello world`を`hello_world`にする  
+split()する前の調整に使ったりする
+```js
+string.replace(" ", "_")
+```
