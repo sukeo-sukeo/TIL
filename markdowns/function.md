@@ -32,39 +32,35 @@ const create_textContent = (elementName, content, parentNode) => {
 ```
 ***
 ## 改良版：より抽象化したHTMLタグを作成する関数
-引数はタグ名、属性名([属性のタイプ、属性の名前])、テキスト、追加する親ノード  
-- 属性名、テキストが必要ないときは`false`を入れてください
-- 親ノードの入力がない場合は要素をリターンするので変数に受け取って加工を続けることができます
+- 属性名、テキストが必要ないときは`false`を入れる
+- 作成された要素をリターンするので変数に受け取って加工を続けることもできます
 ```js
-//createTag(string, arry(boolean), string(boolean), string(boolean or null))
-const createTag = (elementName, attr, content, parentNode) => {
+//createTag('p', ['id', 'user_name' ], 'username: ', data_wrapper) return <p id="user_name">username: </p>
+//attrs, contentが不要の時はfalseを引数に入れてください
+const createTag = (elementName, attrs, content, parentNode) => {
   const el = document.createElement(elementName)
 
-  if (attr !== false) {
-    if (typeof attr === "string" || attr.length % 2 === Number(1)) {
+  if (attrs !== false) {
+    if (typeof attrs !== 'object' || attrs.length % 2 === Number(1)) {
       console.error(
-        "第２引数は配列、ペアでお願いします[attribute, attributeName]"
+        "第２引数は配列、ペアでお願いします[attribute, attributeName]\n属性やテキストが必要ないときは'false'を入れてください"
       );
       return;
     }
-    if (typeof attr[0] === 'object') {
-      console.log(attr);
-      attr.forEach(v => {
-        el.setAttribute(v[0], v[1])
+
+    if (typeof attrs[0] === 'object') {
+      attrs.forEach(attr => {
+        el.setAttribute(attr[0], attr[1])
       })
     } else {
-      el.setAttribute(attr[0], attr[1])
+      el.setAttribute(attrs[0], attrs[1])
     }
   }
 
-  if (content) el.textContent = content
+  if (content !== false) el.textContent = content
 
   if (parentNode) parentNode.appendChild(el)
 
   return el
 }
-```
-サンプル
-```js
-createTag('p', false, `国名: ${el.name}`, DATA_WRAPPER)
 ```

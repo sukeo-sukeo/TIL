@@ -25,17 +25,18 @@ const baseUrl = "https://restcountries.eu/rest/v2/";
         }
       });
       dict.forEach((v, key) => {
+        // createTag('option', ['value', key], 'val', SUB_REGION)
         createTag('option', ['value', key], key + ' : ' + v + 'カ国', SUB_REGION)
       });
     });
 })();
 
-SUB_REGION.addEventListener('change', e => {
-  console.log(e.target.value);
+SUB_REGION.addEventListener('change', event => {
+  console.log(event.target.value);
    while (DATA_WRAPPER.firstChild) {
      DATA_WRAPPER.removeChild(DATA_WRAPPER.firstChild);
    }
-  apiAccess(baseUrl + "subregion/" + e.target.value);
+  apiAccess(baseUrl + "subregion/" + event.target.value);
 })
 
 BTNS.forEach(btn => {
@@ -77,37 +78,33 @@ const apiAccess = (url) => {
     })
 }
 
-//createTag(string, arry(boolean), string(boolean), string(boolean or null))
-const createTag = (elementName, attr, content, parentNode) => {
+
+//createTag('p', ['id', 'user_name' ], 'username: ', data_wrapper) return <p id="user_name">username: </p>
+//attrs, contentが不要の時はfalseを引数に入れてください
+const createTag = (elementName, attrs, content, parentNode) => {
   const el = document.createElement(elementName)
 
-  if (attr !== false) {
-    if (typeof attr === "string" || attr.length % 2 === Number(1)) {
+  if (attrs !== false) {
+    if (typeof attrs !== 'object' || attrs.length % 2 === Number(1)) {
       console.error(
-        "第２引数は配列、ペアでお願いします[attribute, attributeName]"
+        "第２引数は配列、ペアでお願いします[attribute, attributeName]\n属性やテキストが必要ないときは'false'を入れてください"
       );
       return;
     }
-    if (typeof attr[0] === 'object') {
-      console.log(attr);
-      attr.forEach(v => {
-        el.setAttribute(v[0], v[1])
+
+    if (typeof attrs[0] === 'object') {
+      attrs.forEach(attr => {
+        el.setAttribute(attr[0], attr[1])
       })
     } else {
-      el.setAttribute(attr[0], attr[1])
+      el.setAttribute(attrs[0], attrs[1])
     }
   }
 
-  if (content) el.textContent = content
+  if (content !== false) el.textContent = content
 
   if (parentNode) parentNode.appendChild(el)
 
   return el
-}
-
-const createTextContentTag = (elementName, content, parentNode) => {
-  const el = document.createElement(elementName);
-  el.textContent = content
-  parentNode.appendChild(el);
 }
 
