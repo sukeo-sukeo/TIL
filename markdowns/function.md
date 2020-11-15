@@ -64,3 +64,38 @@ const createTag = (elementName, attrs, content, parentNode) => {
   return el
 }
 ```
+***
+## シャッフルする
+```js
+const shuffle = ([...arr]) => {
+  let m = arr.length;
+  while (m) {
+    const i = Math.floor(Math.random() * m--);
+    console.log(i);
+    [arr[m], arr[i]] = [arr[i], arr[m]];
+  }
+  return arr;
+};
+```
+***
+## 子要素をまとめてクリアする
+```js
+const initElements = (...args) => {
+  args.forEach((arg) => {
+    while (arg.firstChild) {
+      arg.removeChild(arg.firstChild);
+    }
+  });
+};
+```
+***
+##  クラス名をまとめて変更する
+```js
+const changeClass = (delClassName, addClassName) => {
+  const elements = document.querySelectorAll(`.${delClassName}`);
+  elements.forEach((element) => element.classList.remove(delClassName));
+  if (addClassName) {
+    elements.forEach((element) => element.classList.add(addClassName));
+  }
+};
+```
