@@ -35,3 +35,19 @@ while (data_wrapper.firstChild) {
   data_wrapper.removeChild(data_wrapper.firstChild);
   }
 ```
+***
+## `querySelector`より`getElemtntById`のが速い
+なるべく限定的なセレクターゲットメソッドを使う
+***
+## HTMLコレクションはイテレートできない
+下記の場合、HTMLコレクションは配列でないためイテレートできずエラーとなる
+```js
+const els = document.getElementsByClassName('hoge')
+els.forEach(el => ...)
+// HTMLコレクションが返ってくる(非配列)
+```
+スプレッド演算子を使う
+```js
+[...els].forEach(el => ...)
+```
+***
