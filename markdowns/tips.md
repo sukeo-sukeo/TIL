@@ -51,3 +51,13 @@ els.forEach(el => ...)
 [...els].forEach(el => ...)
 ```
 ***
+## continue文
+```js
+for () {
+  if (条件) continue; 
+  // 条件に合致する場合移行の処理をスキップして次の繰り返し処理に移る
+  処理
+}
+```
+![](../assets/p10-1.png)
+***
