@@ -6,3 +6,8 @@
 component(部品)を組み合わせてviews(ページ)をつくる  
 viewsをルーティング(routerで設定)する  
 App.vueで統合してdiv#app(index.html)にドカンして完成
+- componentに登録したコンポーネントを使ってないと怒られる
+- propsは親から渡さなくても怒られない(怒られることもある)
+- 怒られたら" "でわたしとく
+- localのファイル読み込みならrequire(パス)でいける
+- httpならfetch
