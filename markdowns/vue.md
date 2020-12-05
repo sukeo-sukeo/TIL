@@ -11,3 +11,7 @@ App.vueで統合してdiv#app(index.html)にドカンして完成
 - 怒られたら" "でわたしとく
 - localのファイル読み込みならrequire(パス)でいける
 - httpならfetch
+- assetsに配置した画像データの読み込み方(苦戦...!)
+```js  
+:src="require(`../assets/product/img/minify/${item.path}`)"
+```
