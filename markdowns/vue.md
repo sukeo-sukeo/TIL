@@ -11,7 +11,38 @@ App.vueで統合してdiv#app(index.html)にドカンして完成
 - 怒られたら" "でわたしとく
 - localのファイル読み込みならrequire(パス)でいける
 - httpならfetch
-- assetsに配置した画像データの読み込み方(苦戦...!)
+***
+## assetsに配置した画像データの読み込み方(苦戦...!)
+JPGもだめ→jpg
 ```js  
 :src="require(`../assets/product/img/minify/${item.path}`)"
+```
+***
+## propsの書き方
+悪い例（動くけど）
+```js
+ props: ['link', 'title', 'descript', 'src'],
+ ```
+良い例
+ ```js
+  props: {
+    link: String,
+    title: String,
+    descript: String,
+    src: String
+    },
+```
+***
+## csv-loaderをinstallしたらbuildできなくなった
+なので、csv-loaderをuninstallしたら  
+hapiが無いと怒られるようになり、これまたbuildできなくなった。  
+hapi単体を再インストールしたら再びbuildできるようになった
+***
+## 子コンポーネントのスタイルを親コンポーネントから変更する
+vue3からは`::v-deep`を使う
+```css
+ ::v-deep .auther, ::v-deep .publisher {
+    color: gray;
+    font-size: 16px;
+  }
 ```
