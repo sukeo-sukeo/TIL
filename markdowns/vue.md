@@ -46,3 +46,34 @@ vue3からは`::v-deep`を使う
     font-size: 16px;
   }
 ```
+## vue3からのfilterは関数適用形式
+```js
+<!-- filter形式 -->
+<p>{{ msg | uppercase | reverse }}</p>
+
+<!-- 通常の関数適用形式 -->
+<p>{{ reverse(uppercase(msg)) }}</p>
+```
+***
+## ページ遷移時の位置の設定
+routerに`scrollBehavior(to, from, savePosition)`で設定する
+- `to`: どこへ
+- `from`: どこから
+- `savePosition`: 戻る、進むがトリガーされたときの挙動→`{x: Number, y: Number}`で渡される
+- 戻る、進むがトリガーされないときは`null`が渡される
+```js
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes,
+  scrollBehavior(to, from, savePosition) {
+    if (savePosition) {
+    //戻るときは同じポジションに戻る
+      return savePosition
+    } else {
+    //routerなどでページ遷移したときはトップに戻す
+      return {x: 0, y: 0 }
+    }
+  }
+})
+```
