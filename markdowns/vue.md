@@ -46,7 +46,7 @@ vue3からは`::v-deep`を使う
     font-size: 16px;
   }
 ```
-## vue3からのfilterは関数適用形式
+## vue3からのfilterは関数適用形式を使う
 ```js
 <!-- filter形式 -->
 <p>{{ msg | uppercase | reverse }}</p>
@@ -76,4 +76,54 @@ const router = new VueRouter({
     }
   }
 })
+```
+***
+## vue cliで作った静的サイトをgithubでホスティングする
+vue.config.jsに`publicPath:`と`outputDir:`を記述する
+```js
+module.exports = {
+  publicPath: '/my_page',
+  outputDir: 'docs',
+  filenameHashing: false,
+  productionSourceMap: false,
+}
+```
+***
+## コンポーネントテンプレート
+```vue
+<template>
+  <v-container>
+    <v-row>
+      <v-col>
+        
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+
+<script>
+
+export default {
+  neme: '',
+  components: {
+  },
+  props: {
+    foo: String,
+    },
+  data: function() {
+    return {
+    }
+  },
+  methods: {    
+  },
+  mounted: function() {
+  },
+  created: function() {
+  },
+}
+</script>
+
+<style lang="" scoped>
+
+</style>
 ```

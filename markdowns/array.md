@@ -103,3 +103,8 @@ names.forEach(name => {
 
 // YES NO YES
 ```
+***
+## 配列の要素を後ろから取得
+```js
+arry.slice().reverse();
+```
