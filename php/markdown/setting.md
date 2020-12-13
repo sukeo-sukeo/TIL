@@ -1,3 +1,8 @@
+## phpの始め方for mac
+- MAMPをDL
+- MAMPフォルダ内のapacheがhtdocsが読むのでここにphpファイルを置く
+- timezoneをAsia/Tokyoに変更__※下記参照
+- localhost/8888/〜 でブラウザからアクセス
 ## timezoneの設定
 htmlファイルに
 ```php
@@ -19,17 +24,3 @@ date.timezone = 'Asia/Tokyo'
 date_default_timezone_set('Asia/Tokyo');
 ```
 ***
-## while文
-```php
-<?php
-//初期化処理
-$i = 1;
-//繰り返す条件
-while ($i <= 365) {
-//繰り返したい処理
-  print($i .  "\n");
-//黒真処理
-  $i = $i + 1;
-}
-?>
-```
