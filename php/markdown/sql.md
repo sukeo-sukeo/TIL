@@ -1,3 +1,5 @@
+## MAMPからphpMyAdminへ
+MAMPを起動しブラウザから入る
 ## 検索
 `SELECT * FROM テーブル名`  
 `*`はすべて
