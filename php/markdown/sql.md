@@ -1,5 +1,31 @@
 ## MAMPからphpMyAdminへ
 MAMPを起動しブラウザから入る
+***
+## webからDBへ接続
+`new PDO('dbname; serverURL; charset', 'user', 'password')`
+```php
+try {
+  // Php Data Object
+  $db = new PDO('mysql:dbname=mydb; host=localhost; charset=utf8', 'root', 'root');
+} catch(PDOException $e) {
+  echo 'DB接続エラー: ' . $e -> getMessage();
+}
+```
+## データベースにアクセス  
+`exec(sql記述)`・・・件数が返る  
+`$count`に件数が入る
+```php
+$count = $db -> exec('INSERT INTO my_items SET maker_id=1, item_name="もも", price=210, keyword="缶詰、ピンク、甘い"');
+```
+`query(sql記述)`・・・値が返る  
+`$records`に値が入る
+```php
+$records = $db -> query('SELECT * FROM my_items');
+while ($record = $records -> fetch()) {
+  echo $record['item_name'] . "\n" ;
+}
+```
+***
 ## 検索
 `SELECT * FROM テーブル名`  
 `*`はすべて
