@@ -2,7 +2,8 @@
 MAMPを起動しブラウザから入る
 ***
 ## webからDBへ接続
-`new PDO('dbname; serverURL; charset', 'user', 'password')`
+`new PDO(mysql:dbname=mydb; host=localhost; charset=utf8', 'root', 'root')`  
+
 ```php
 try {
   // Php Data Object
@@ -12,18 +13,41 @@ try {
 }
 ```
 ## データベースにアクセス  
-`exec(sql記述)`・・・件数が返る  
+`exec(sql記述)`・・・件数を取得したいとき  
 `$count`に件数が入る
 ```php
 $count = $db -> exec('INSERT INTO my_items SET maker_id=1, item_name="もも", price=210, keyword="缶詰、ピンク、甘い"');
 ```
-`query(sql記述)`・・・値が返る  
+`query(sql記述)`・・・値を取得したいとき  
 `$records`に値が入る
 ```php
 $records = $db -> query('SELECT * FROM my_items');
 while ($record = $records -> fetch()) {
   echo $record['item_name'] . "\n" ;
 }
+```
+## フォーム⇒PHP⇒DBの連携
+> フォームからのPOSTはArrayでくるのでArrayでDBへ渡す(たぶん)
+> stringだとDBに入らなかった  
+
+データ挿入(非推奨パターン)  
+sqlに直接`$_POST`は安全性の観点からNG
+```php
+$db -> exec('INSERT INTO memos SET memo = "' . $_POST['memo'] . '", created_at=NOW()');
+```
+データ挿入(推奨パターン)  
+`prepare`・・・メモをポストするよ〜っていう事前準備する  
+`execute`で実行する
+```php 
+$statment = $db -> prepare('INSERT INTO memos SET memo=?, created_at=NOW()');
+//arrayでDBへ もちろん[ブラケット]でもOK
+$statment -> execute(array($_POST['memo']));
+
+//下記のパターンでもOK
+$statment -> bindParam(1, $_POST['memo']);
+$statment -> execute();
+//bindParamで複数のデータを指定できる
+//1はこれ、２はこれ、３はこれ...など
 ```
 ***
 ## 検索
