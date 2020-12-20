@@ -1,56 +1,17 @@
 ## MAMPからphpMyAdminへ
 MAMPを起動しブラウザから入る
 ***
-## webからDBへ接続
-`new PDO(mysql:dbname=mydb; host=localhost; charset=utf8', 'root', 'root')`  
-
+## web上でのsql文の使い方
+`db -> prepare(sql文)`て感じで
+[webとdb連携へ](./db連携.md)
 ```php
-try {
-  // Php Data Object
-  $db = new PDO('mysql:dbname=mydb; host=localhost; charset=utf8', 'root', 'root');
-} catch(PDOException $e) {
-  echo 'DB接続エラー: ' . $e -> getMessage();
-}
-```
-## データベースにアクセス  
-`exec(sql記述)`・・・件数を取得したいとき  
-`$count`に件数が入る
-```php
-$count = $db -> exec('INSERT INTO my_items SET maker_id=1, item_name="もも", price=210, keyword="缶詰、ピンク、甘い"');
-```
-`query(sql記述)`・・・値を取得したいとき  
-`$records`に値が入る
-```php
-$records = $db -> query('SELECT * FROM my_items');
-while ($record = $records -> fetch()) {
-  echo $record['item_name'] . "\n" ;
-}
-```
-## フォーム⇒PHP⇒DBの連携
-> フォームからのPOSTはArrayでくるのでArrayでDBへ渡す(たぶん)
-> stringだとDBに入らなかった  
-
-データ挿入(非推奨パターン)  
-sqlに直接`$_POST`は安全性の観点からNG
-```php
-$db -> exec('INSERT INTO memos SET memo = "' . $_POST['memo'] . '", created_at=NOW()');
-```
-データ挿入(推奨パターン)  
-`prepare`・・・メモをポストするよ〜っていう事前準備する  
-`execute`で実行する
-```php 
+// $statmentにmemosテーブル
 $statment = $db -> prepare('INSERT INTO memos SET memo=?, created_at=NOW()');
-//arrayでDBへ もちろん[ブラケット]でもOK
-$statment -> execute(array($_POST['memo']));
-
-//下記のパターンでもOK
-$statment -> bindParam(1, $_POST['memo']);
-$statment -> execute();
-//bindParamで複数のデータを指定できる
-//1はこれ、２はこれ、３はこれ...など
+$statment -> execute([$_POST['memo']]);
 ```
 ***
-## 検索
+# CRUD
+## 検索(READ)
 `SELECT * FROM テーブル名`  
 `*`はすべて
 ```sql
@@ -143,20 +104,20 @@ LEFT JOIN carts ON my_items.id=carts.item_id
 GROUP BY carts.item_id
 ```
 ***
-## 挿入
+## 挿入(CREATE)
 `INSERT INTO テーブル名 SET カラム名=val, ...`
 ```sql
 INSERT INTO my_items SET id=100, name='アイテム';
 ```
 ***
-## 更新
+## 更新(UPDATE)
 `UPDATE テーブル名 SET どこを=何に WHERE どこの=何を`  
 `WHERE`をつけないと全部のpriceが180に変わっちゃう
 ```sql
 UPDATE my_items SET price=180 WHERE id=1;
 ```
 ***
-## 削除
+## 削除(DELETE)
 `DELETE FROM テーブル名 WHERE どこの=何を`  
 `WHERE`をつけないとmy_itemsテーブル全部削除
 ```sql

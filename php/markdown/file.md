@@ -1,3 +1,9 @@
+## 共通化したファイルを読み込む
+`require('ファイルパス');`
+```php
+require('dbconnect.php');
+```
+***
 ## ファイルへの書き込み
 ```php
 $success = file_put_contents('ファイルへのパス', '書き込みたい内容');
