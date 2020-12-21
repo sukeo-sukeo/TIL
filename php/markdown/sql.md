@@ -136,3 +136,6 @@ CREATE TABLE my_items (id INT, item_name TEXT, price INT);
 - オートインクリメント設定中に例えば`id3`を削除すると`id3`は永久欠番になる・・・リレーショナルの構造上重要となる  
 - 機械はひらがな⇒カタカナ⇒漢字の順で管理(すべて文字コード順)  
 - 名前順で並び替えたい場合`kana`などのカナ統一カラムを用意する
+- varchar 文字数を制限したtext型
+- timestamp 更新日に設定
+- datetime 作成日に設定

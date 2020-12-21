@@ -55,3 +55,22 @@ if (preg_match("/\A\d{3}[-]\d{4}\z/", $zip)) {
 ```php
 preg_match("/\A\d{3}[-]\d{4}\z/", $zip)
 ```
+***
+## ファイルを送信するときは...
+formタグの`enctype属性`に`multipart/form-data`を記述
+```html
+<form action="" method="post" enctype="multipart/form-data">
+```
+phpで受け取る...
+```php
+//グローバル変数
+$_FILES
+// で受け取る
+['image'] 
+['name'] //ファイル名
+['tmp_name'] //一時的にアップロードされている場所
+```
+move_uploaded_file(今ある場所, 移動先);
+```php
+move_uploaded_file($_FILES['image']['tmp_name'], '../member_picture/' . $image);
+```
