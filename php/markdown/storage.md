@@ -26,3 +26,9 @@ $_SESSION['session_message'] = '値をセッションに保存しました';
 ```php
 echo ($_COOKIE['save_message']);
 ```
+破棄  
+`unset($_SESSION['key'])`  
+例えばDBに登録したら破棄して重複を防ぐ
+```php
+unset($_SESSION['session_message']);
+```

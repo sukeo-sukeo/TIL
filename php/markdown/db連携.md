@@ -46,7 +46,10 @@ $statment -> bindParam(1, $_POST['memo']);
 $statment -> execute();
 //bindParamで複数のデータを指定できる
 //1はこれ、２はこれ、３はこれ...など
+$statment -> bindParam(1, $_POST['memo'], PDO::PARAM_INT);
 ```
+- `execute`で渡すと文字列となる  
+- 数字で渡したい場合`PDO::PARAM_INT`のオプションを指定する
 ***
 ## ページ遷移時にidをurlに乗せて渡し該当データをDBから取得する
 urlを使用してidパラメータを渡す  
@@ -129,4 +132,11 @@ hiddenパラメータ
 > sessionやcookieを使うまでもないときに利用
 ```html
 <input type="hidden" name="id" value="<?php echo $id; ?>">
+```
+ハッシュ化  
+`sha1()`  
+- 不可逆暗号・・・ハッシュ化された文字列からは元に戻せない
+- ハッシュ化前の同じ文字列は必ず同じ文字列の並びにハッシュされる
+```php
+sha1($_SESSION['join']['password'])
 ```

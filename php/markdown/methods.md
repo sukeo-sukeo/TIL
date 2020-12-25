@@ -20,4 +20,10 @@ if (empty(配列)) {
 ```
 issetとの違い  
 ![](../assets/isset_empty.png)
+### 例:エラーがない場合...
+```php
+if (empty($error)) {
+		
+	}
+```
 ***
