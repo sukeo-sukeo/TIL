@@ -1,0 +1,127 @@
+<mxfile host="65bd71144e" modified="2020-12-26T19:27:58.412Z" agent="5.0 (Macintosh; Intel Mac OS X 10_16_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" version="13.10.0" etag="PP_nz9_yf1dUENc7IhB7" type="embed">
+    <diagram id="ZznTQgDOmSmFfBahL2HB" name="ページ1">
+        <mxGraphModel dx="773" dy="633" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7.misc.iphone;strokeColor=#c0c0c0;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="10" width="200" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="shape=rect;strokeColor=none;fillColor=#ffffff;gradientColor=none;shadow=0;" vertex="1" parent="1">
+                    <mxGeometry x="38" y="80" width="164" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Saturday 10:12 AM" style="shape=text;align=center;verticalAlign=middle;fontSize=5;fontColor=#999999;strokeColor=none;fillColor=none;spacingTop=3;resizeWidth=1;" vertex="1" parent="3">
+                    <mxGeometry width="164" height="10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="Hey man, got a sec?" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.callout;strokeColor=none;fillColor=#E7E6EC;align=left;verticalAlign=middle;fontSize=7;spacingLeft=17;fontColor=#000000;spacingTop=2;whiteSpace=wrap;resizeWidth=1;" vertex="1" parent="3">
+                    <mxGeometry width="90" height="20" relative="1" as="geometry">
+                        <mxPoint x="5" y="15" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="Hi Tim, of course, just give me a couple minutes to finish breakfast." style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.callout;strokeColor=none;fillColor=#0680FF;flipH=1;align=left;verticalAlign=top;fontSize=7;spacingLeft=2;fontColor=#ffffff;spacingTop=-2;whiteSpace=wrap;spacingRight=12;resizeWidth=1;" vertex="1" parent="3">
+                    <mxGeometry x="0.35" width="100" height="35" relative="1" as="geometry">
+                        <mxPoint y="40" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="Read Friday" style="shape=text;align=right;verticalAlign=middle;fontSize=5;fontColor=#999999;strokeColor=none;fillColor=none;spacingTop=3;resizeWidth=1;" vertex="1" parent="3">
+                    <mxGeometry width="164" height="10" relative="1" as="geometry">
+                        <mxPoint y="80" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="" style="shape=rect;strokeColor=none;fillColor=#ffffff;gradientColor=none;shadow=0;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="220" width="164" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Label" style="shape=rect;strokeColor=none;fontSize=10;fontColor=#000000;resizeWidth=1;align=left;spacingLeft=25;spacingTop=2;" vertex="1" parent="8">
+                    <mxGeometry width="164" height="20" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="shape=rect;rounded=1;rSize=3;strokeColor=none;fillColor=#FF9501;" vertex="1" parent="9">
+                    <mxGeometry y="0.5" width="15" height="15" relative="1" as="geometry">
+                        <mxPoint x="5" y="-7.5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="" style="shape=mxgraph.ios7.misc.right;strokeColor=#666666;" vertex="1" parent="9">
+                    <mxGeometry x="1" y="0.5" width="5" height="10" relative="1" as="geometry">
+                        <mxPoint x="-15" y="-5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="Label" style="shape=rect;strokeColor=none;fontSize=10;fontColor=#000000;resizeWidth=1;align=left;spacingLeft=25;spacingTop=2;" vertex="1" parent="8">
+                    <mxGeometry width="164" height="20" relative="1" as="geometry">
+                        <mxPoint y="20" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="" style="shape=rect;rounded=1;rSize=3;strokeColor=none;fillColor=#FF3B2F;" vertex="1" parent="12">
+                    <mxGeometry y="0.5" width="15" height="15" relative="1" as="geometry">
+                        <mxPoint x="5" y="-7.5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="" style="shape=mxgraph.ios7.misc.right;strokeColor=#666666;" vertex="1" parent="12">
+                    <mxGeometry x="1" y="0.5" width="5" height="10" relative="1" as="geometry">
+                        <mxPoint x="-15" y="-5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="Label" style="shape=rect;strokeColor=none;fontSize=10;fontColor=#000000;resizeWidth=1;align=left;spacingLeft=25;spacingTop=2;" vertex="1" parent="8">
+                    <mxGeometry width="164" height="20" relative="1" as="geometry">
+                        <mxPoint y="40" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="" style="shape=rect;rounded=1;rSize=3;strokeColor=none;fillColor=#4CDA64;" vertex="1" parent="15">
+                    <mxGeometry y="0.5" width="15" height="15" relative="1" as="geometry">
+                        <mxPoint x="5" y="-7.5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="" style="shape=mxgraph.ios7.misc.right;strokeColor=#666666;" vertex="1" parent="15">
+                    <mxGeometry x="1" y="0.5" width="5" height="10" relative="1" as="geometry">
+                        <mxPoint x="-15" y="-5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="Label" style="shape=rect;strokeColor=none;fontSize=10;fontColor=#000000;resizeWidth=1;align=left;spacingLeft=25;spacingTop=2;" vertex="1" parent="8">
+                    <mxGeometry width="164" height="20" relative="1" as="geometry">
+                        <mxPoint y="60" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="" style="shape=rect;rounded=1;rSize=3;strokeColor=none;fillColor=#007AFF;" vertex="1" parent="18">
+                    <mxGeometry y="0.5" width="15" height="15" relative="1" as="geometry">
+                        <mxPoint x="5" y="-7.5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="" style="shape=mxgraph.ios7.misc.right;strokeColor=#666666;" vertex="1" parent="18">
+                    <mxGeometry x="1" y="0.5" width="5" height="10" relative="1" as="geometry">
+                        <mxPoint x="-15" y="-5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="Label" style="shape=rect;strokeColor=none;fontSize=10;fontColor=#000000;resizeWidth=1;align=left;spacingLeft=25;spacingTop=2;" vertex="1" parent="8">
+                    <mxGeometry width="164" height="20" relative="1" as="geometry">
+                        <mxPoint y="80" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="" style="shape=rect;rounded=1;rSize=3;strokeColor=none;fillColor=#5855D6;" vertex="1" parent="21">
+                    <mxGeometry y="0.5" width="15" height="15" relative="1" as="geometry">
+                        <mxPoint x="5" y="-7.5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="" style="shape=mxgraph.ios7.misc.right;strokeColor=#666666;" vertex="1" parent="21">
+                    <mxGeometry x="1" y="0.5" width="5" height="10" relative="1" as="geometry">
+                        <mxPoint x="-15" y="-5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="Label" style="shape=rect;strokeColor=none;fontSize=10;fontColor=#000000;resizeWidth=1;align=left;spacingLeft=25;spacingTop=2;" vertex="1" parent="8">
+                    <mxGeometry width="164" height="20" relative="1" as="geometry">
+                        <mxPoint y="100" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="" style="shape=rect;rounded=1;rSize=3;strokeColor=none;fillColor=#8F8E94;" vertex="1" parent="24">
+                    <mxGeometry y="0.5" width="15" height="15" relative="1" as="geometry">
+                        <mxPoint x="5" y="-7.5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="" style="shape=mxgraph.ios7.misc.right;strokeColor=#666666;" vertex="1" parent="24">
+                    <mxGeometry x="1" y="0.5" width="5" height="10" relative="1" as="geometry">
+                        <mxPoint x="-15" y="-5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

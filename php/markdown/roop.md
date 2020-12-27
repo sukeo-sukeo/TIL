@@ -26,3 +26,11 @@ for ($i = 1; $i <= 365; $i ++) :
   print(date('n/j(D)', $date) . "\n");
 endfor;
 ```
+***
+## foreach
+```php
+$name = $_POST;
+foreach($name as $key => $value) {
+  echo $key . ':' . $value;
+}
+```
