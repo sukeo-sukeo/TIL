@@ -140,3 +140,5 @@ hiddenパラメータ
 ```php
 sha1($_SESSION['join']['password'])
 ```
+- 取得するだけなら`query()`  
+- 挿入など操作なら`prepare()`
