@@ -23,3 +23,21 @@ foreach($fuits as $english => $japanese) {
 ```php
 print_r($arry);
 ```
+***
+## arryを展開する
+`...arry`  
+$scores内で$moreScoresを展開したい
+```php
+$moreScores = [
+  55,
+  72
+];
+
+$scores = [
+  90,
+  40,
+  ...$moreScores,
+  100
+]
+// 90 40 55 72 100 となる
+```

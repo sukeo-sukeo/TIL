@@ -8,8 +8,12 @@ $i += 1;
 ```php
 "\n"
 ```
+PHP_EOL
+```php
+echo 'hello' . PHP_EOL;
+```
 ## 桁数を揃える
-sprintf()  
+`sprintf()`  
 %のあとの文字で桁を揃える  
 %の数がパラメーターの数
 dをsにするとStringになる'abcde'

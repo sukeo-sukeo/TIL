@@ -6,6 +6,10 @@ php`->`
 js`+`  
 php`.`
 ***
+### 連想配列の記述
+js`key : value`  
+php`key => value`
+*** 
 ### console.log()みたいなやつ
 ```php
 var_dump(変数など);

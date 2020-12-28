@@ -5,7 +5,7 @@
 header('Location: https://sukeo-sukeo.github.io/FlagCollectionApp/index.html')
 ```
 ## 文字数を返す
-lengtht的なやつ
+length的なやつ
 ```php
 strlen()
 ```

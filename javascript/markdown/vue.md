@@ -13,7 +13,8 @@ App.vueで統合してdiv#app(index.html)にドカンして完成
 - httpならfetch
 ***
 ## assetsに配置した画像データの読み込み方(苦戦...!)
-JPGもだめ→jpg
+srcをbindするときは`require`  
+JPGもだめ→jpg  
 ```js  
 :src="require(`../assets/product/img/minify/${item.path}`)"
 ```

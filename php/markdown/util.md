@@ -75,3 +75,29 @@ header('Location: index.php');
 exit();
 
 ```
+***
+## 可変長引数
+```php
+function sum(...$numbers)
+{
+  // return $a + $b + $c;
+  $total = 0;
+  foreach ($numbers as $number) {
+    $total += $number;
+  }
+  return $total;
+}
+```
+***
+## 複数の返り値を受け取る
+配列にする
+```php
+return [$total, $total / count($numbers)];
+```
+返り値をそのまま変数に代入  
+fnc()の結果が$sumと$averageに入る
+```php
+list($sum, $average) = fnc(1, 3, 5);
+//もしくは
+[$sum, $average] = fnc(1, 3, 5);
+```

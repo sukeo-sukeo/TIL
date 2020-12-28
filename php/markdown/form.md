@@ -74,3 +74,20 @@ move_uploaded_file(今ある場所, 移動先);
 ```php
 move_uploaded_file($_FILES['image']['tmp_name'], '../member_picture/' . $image);
 ```
+---
+## クエリ文字列で処理を分岐
+`$_GET`でURLパラメータを取得して処理を分岐させられる  
+送信物（form）が２つある場合など、どちらのフォーム送信か判別したいとき
+```php
+//urlのクエリが`add`のときはこれこれとできる
+<form action="?action=add" method="post">
+
+//urlのクエリが`check`のときはこれこれとできる
+<form action="?action=check" method="post">
+```
+`filter_input()`で受け取る
+```php
+filter_input(INPUT_GET, 'action');
+
+//INPUT_GET、INPUT_POST、 INPUT_COOKIE、INPUT_SERVER あるいは INPUT_ENV のいずれか。
+```
