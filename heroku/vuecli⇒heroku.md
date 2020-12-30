@@ -1,5 +1,7 @@
 ## `vuecli`で作成したサイトをherokuにデプロイ
-やったこと  
+> HTMLのような静的なwebサイトの場合にはPHPなどでファイルを作成し、heroku側にアプリだと認識させることでHTML表示をさせることが出来るようになります。
+  
+### やったこと ⇒ expressでサーバーをたてた
 - 以前作成したサイトをgit clone  
 - heroku create app名
 - npm i  
