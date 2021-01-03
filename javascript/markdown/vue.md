@@ -142,8 +142,7 @@ Vue.prototype.$axios = axios;
 呼び出し方
 ```js
 this.$axios.get("url")
-  .then(res => res.json())
-  .then(data => console.log(data))
+  .then(res => console.log(res.data[0]))
   .chatch(err => console.log(err));
 ```
 GET時のクエリパラメーターの指定方法
@@ -154,7 +153,7 @@ const params = {
 }
 //第２引数に記述
 this.$axios.get("url", {params: params})
-  .then(res => console.log(res.data()))
+  .then(res => console.log(res.data[0]))
   .chatch(err => console.log(err));
 ```
 corsポリシー対策
