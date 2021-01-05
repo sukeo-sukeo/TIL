@@ -60,3 +60,34 @@ devServer: {
     proxy: 'http://localhost:8000'
   },
 ```
+***
+## 複数のデータをinsert
+```js
+const sql = `insert into テーブル名 (カラム名１，カラム名２...) values ?`;
+// values ? に 下のqueryの第２引数[]が入る 
+  db.query(sql, [用意した値を配列で読む], (err, docs) => {
+    if (err) throw err;
+    res.send('insert ok!');
+  });
+```
+```js
+const values = [];
+const today = new Date();
+data.forEach(d => {
+    values.push([
+      d.title,
+      d.description,
+      d.path,
+      d.link,
+      d.movieLink,
+      //配列データはStringに型変換
+      String(d.use),
+      today,
+    ]); 
+  });
+  const sql = `insert into product (title, descript, src, link, movie_link, used_skill, created) values ?`;
+  db.query(sql, [values], (err, docs) => {
+    if (err) throw err;
+    res.send('insert ok!');
+  });
+```
