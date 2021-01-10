@@ -33,6 +33,12 @@ git commit -m '1st commit'
 git push heroku master
 ```
 これで無事デプロイできました。
+***
+## apiやdbをいれるときの注意点
+- process.envはheroku側のsettingでセットする
+- server.jsはルートに配置(未確定)
+- procfileを記述(未確定）
+- apiのルーティングURLを確認。localと違いがある場合がある(未確定)
 
 ## その他Tips
 - npmとyeanどちらかにしろと言われた
