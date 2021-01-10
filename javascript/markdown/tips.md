@@ -82,3 +82,9 @@ class = "foo _ __ hoge"
 ```
 なぞ。
 ***
+## expressでhostnameを取得
+```js
+const os = require('os');
+const hostname = os.hostname();
+// mba.local
+```
