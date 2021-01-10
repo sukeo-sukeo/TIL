@@ -39,6 +39,4 @@ git push heroku master
 - server.jsはルートに配置(未確定)
 - procfileを記述(未確定）
 - apiのルーティングURLを確認。localと違いがある場合がある(未確定)
-
-## その他Tips
 - npmとyeanどちらかにしろと言われた

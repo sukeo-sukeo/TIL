@@ -16,7 +16,19 @@ git push heroku master
 ```
 heroku open
 ```
+## エラーの確認
+ログをチェック
+```
+heroku logs --tail
+```
+heroku側でアプリを実行してみる
+ ```
+ heroku run npm start
+ ```
+ 自分の場合sqlの接続エラーが原因と判明  
+ → heroku側の環境変数が未設定だった！ 
 
+---
 ## アプリの削除
 ```
 heroku apps:destroy --app アプリ名

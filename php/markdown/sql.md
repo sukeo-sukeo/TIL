@@ -130,6 +130,10 @@ DELETE FROM my_items WHERE id=1;
 CREATE TABLE my_items (id INT, item_name TEXT, price INT);
 ```
 ***
+## 配列の扱い
+['A', 'B', 'C'] → `"A, B, C"`
+
+---
 ## Tips
 - primaryキーを設定する(重複を防げる)
 - オートインクリメント( structure > change > A I )
