@@ -11,10 +11,15 @@ herokuにアプリケーションだと認識してもうらためexpressでサ�
 1. package.jsonの`"script"`に`"start": "node server.js"`記述
 1. server.jsファイルを新規作成し下記コードを記述
 ```js:server.js
+//srcディレクトリに作成したserver.jsでdocsのindex.htmlをサーブする処理
 const express = require('express');
 const port = process.env.PORT || 8080;
 const app = express();
-app.use(express.static(__dirname + "/docs/"));
+app.use(express.static(__dirname + "/../docs/"));
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/../docs/index.html');
+});
 app.listen(port);
 ```
 herokuにデプロイする箱を作成
