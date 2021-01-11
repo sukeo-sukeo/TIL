@@ -51,4 +51,7 @@ const history = require('connect-hisotry-api-fallback')
 app.use(history())
 ```
 connect-hisotry-api-fallbackを使えばOK！
----
+***
+## 反映には１分〜２分ほど時間がかかるっぽい？(体感)
+heroku push のち少し時間を置くべし...  
+これでだいぶハマッたくさい...
