@@ -7,3 +7,5 @@ heroku addons:add cleardb
 heroku config | grep CLEARDB_DATABASE_URL
 // CLEARDB_DATABASE_URL: mysql://ユーザ名:パスワード@サーバ名/データベース?reconnect=true
 ```
+## pgモジュール
+![](./assets/pgモジュール.jpeg)

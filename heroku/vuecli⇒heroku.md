@@ -40,3 +40,15 @@ git push heroku master
 - procfileを記述(未確定）
 - apiのルーティングURLを確認。localと違いがある場合がある(未確定)
 - npmとyeanどちらかにしろと言われた
+---
+## SPAのhistoryモード時、ページリロードエラーを解決！
+ルートパス以外でリロードすると`Cannot Get / hoge`となる問題
+```
+npm i connect-hisotry-api-fallback
+```
+```js
+const history = require('connect-hisotry-api-fallback')
+app.use(history())
+```
+connect-hisotry-api-fallbackを使えばOK！
+---

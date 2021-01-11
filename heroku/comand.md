@@ -1,3 +1,4 @@
+# とにかくドキュメントに書いてある！
 ## アプリ作成手順
 ```
 空のリポジトリ作成しプログラムをつくる (git cloneしてくる)
@@ -15,6 +16,16 @@ git push heroku master
 ```
 ```
 heroku open
+```
+---
+## localで実行
+```
+heroku local web
+```
+---
+## heroku内でターミナル
+```
+heroku run bash
 ```
 ## エラーの確認
 ログをチェック
