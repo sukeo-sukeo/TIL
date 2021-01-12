@@ -11,15 +11,20 @@ herokuにアプリケーションだと認識してもうらためexpressでサ�
 1. package.jsonの`"script"`に`"start": "node server.js"`記述
 1. server.jsファイルを新規作成し下記コードを記述
 ```js:server.js
-//srcディレクトリに作成したserver.jsでdocsのindex.htmlをサーブする処理
+//server.jsでdocsのindex.htmlをサーブする
 const express = require('express');
 const port = process.env.PORT || 8080;
 const app = express();
-app.use(express.static(__dirname + "/../docs/"));
+const path = require('path');
+const docs = path.join(__dirname, 'docs');
+
+//いろいろエラー出たが最終的にこの記述で解消された
+app.use('/', express.static(docs));
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/../docs/index.html');
-});
+  res.sendFile(path.join(docs, 'index.html'));
+})
+
 app.listen(port);
 ```
 herokuにデプロイする箱を作成
@@ -35,12 +40,14 @@ git push heroku master
 これで無事デプロイできました。
 ***
 ## apiやdbをいれるときの注意点
-- process.envはheroku側のsettingでセットする
+- process.envをheroku側のsettingでセットする
 - server.jsはルートに配置(未確定)
-- procfileを記述(未確定）
+- procfileを記述(未確定）なくてもよい？
 - apiのルーティングURLを確認。localと違いがある場合がある(未確定)
 - npmとyeanどちらかにしろと言われた
----
+***
+## 重要：ルーティングパスなど基本的な記述を見直す
+***
 ## SPAのhistoryモード時、ページリロードエラーを解決！
 ルートパス以外でリロードすると`Cannot Get / hoge`となる問題
 ```
@@ -50,8 +57,16 @@ npm i connect-hisotry-api-fallback
 const history = require('connect-hisotry-api-fallback')
 app.use(history())
 ```
-connect-hisotry-api-fallbackを使えばOK！
+`connect-hisotry-api-fallbackを使えばOK！`
 ***
+## 2分くらいすると(一定回数接続すると？)dbの接続がロストする
+```
+Error: Connection lost: The server closed the connection.
+```
+
+***
+*下記は関係なかった！*
 ## 反映には１分〜２分ほど時間がかかるっぽい？(体感)
 heroku push のち少し時間を置くべし...  
-これでだいぶハマッたくさい...
+これでだいぶハマッたくさい...  
+いやそれか、スリープ中のアクセスでエラーなのかも...

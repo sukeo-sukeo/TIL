@@ -88,3 +88,6 @@ const os = require('os');
 const hostname = os.hostname();
 // mba.local
 ```
+***
+## 即時関数の中で自身を呼び出すとうまくいかない
+素直に関数定義後に関数を呼んであげるべし
