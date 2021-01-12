@@ -92,7 +92,7 @@ data.forEach(d => {
   });
 ```
 ***
-# herokuにてCONNECTION_LOSTする問題
+# herokuにて`cleardb`が２分後にCONNECTION_LOSTする問題
 ## mysql接続を維持する①
 ```js
 const handleDisconnect = () => {
@@ -117,7 +117,7 @@ const handleDisconnect = () => {
 handleDisconnect();
 ```
 ## mysql接続を維持する②
-createConnection() → createPool() とする
+`createConnection()` → `createPool()` とする
 ```js
 const db = createPool(options);
 ```
