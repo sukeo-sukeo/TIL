@@ -50,3 +50,7 @@ foreach($names as $key => $name) {
   echo $key . ' : ' . $name;
 }
 ```
+***
+### スコープ
+js 中から外を使える
+php 中から外は使えない
