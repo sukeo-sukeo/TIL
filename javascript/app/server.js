@@ -6,7 +6,8 @@ const server = http.createServer((req, res) => {
 });
 
 // require("./janken/janken-node.js")();
-require("./date/date-node.js")
+// require("./date/date-node.js")
+require('./experiment')
 
 server.listen(3000, () => {
   console.log("listening port 3000!");
