@@ -27,3 +27,36 @@ db.ref('lists/').once("value", snapshot => res.json({ data: snapshot.val() }))
 `once`でやるとエラーがでなくなった  
 少しハマった
 ***
+# functionsがデプロイできない！
+firebase deploy で `functions`がデプロイできなかった
+```
+Error: function terminated. Recommended action: inspect logs for termination reason. Additional troubleshooting documentation can be found at https://cloud.google.com/functions/docs/troubleshooting#logging Function cannot be initialized.
+```
+```
+"status":{"code":3,"message":"Function failed on loading user code. This is likely due to a bug in the user code.
+```
+```
+Functions deploy had errors with the following functions:
+```
+## コード内のエラーが原因
+自分の場合、認証jsonファイルへのパスをハードコーディングしていたのでローカルでは動いていたがクラウド上では当然読み込めない...
+```js
+// 変更前
+// serviceAcountにローカルでのパスを記述していた
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://lister-424b3-default-rtdb.firebaseio.com",
+});
+```
+```js
+// 変更後
+// ターミナルで環境変数にパスを設定し下記コードに変更
+admin.initializeApp({
+  credential: admin.credential.applicationDefault(),
+  databaseURL: "https://lister-424b3-default-rtdb.firebaseio.com",
+});
+```
+ターミナルで環境変数の設定
+```
+export GOOGLE_APPLICATION_CREDENTIALS="パス"
+```
