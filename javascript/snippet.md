@@ -1,3 +1,34 @@
+***
+## gameloop
+```js
+const FPS = 1000 / 60
+_mainLoop() {
+    let frameCount = 0
+    let startTime = performance.now()
+    function _loop() {
+      if (frameCount > 180) return
+      let nowTime = performance.now()
+      let nowFrame = (nowTime - startTime) / FPS
+      if (nowFrame > frameCount) {
+        frameCount++
+        console.log('frame', frameCount);
+        console.log('nowframe', nowFrame);
+        console.log('start', startTime);
+        console.log('now', nowTime);
+        // this._pushQuestion();
+      }
+      requestAnimationFrame(_loop);
+    }
+    requestAnimationFrame(_loop)
+  }
+```
+## DOMをクリアする
+```js
+while (data_wrapper.firstChild) {
+  data_wrapper.removeChild(data_wrapper.firstChild);
+  }
+```
+
 # Domをつくるクラス
 ```js
  class Element {
@@ -132,4 +163,45 @@ function getUniqueStr(myStrong){
   if (myStrong) strong = myStrong;
   return new Date().getTime().toString(16) + Math.floor(strong*Math.random()).toString(16)
 }
+```
+***
+# スワイプ実装
+```js
+	
+/*
+ * スワイプイベント設定
+ */
+function setSwipe(elem) {
+    let t = document.querySelector(elem);
+    let startX;        // タッチ開始 x座標
+    let startY;        // タッチ開始 y座標
+    let moveX;    // スワイプ中の x座標
+    let moveY;    // スワイプ中の y座標
+    let dist = 30;    // スワイプを感知する最低距離（ピクセル単位）
+     
+    // タッチ開始時： xy座標を取得
+    t.addEventListener("touchstart", function(e) {
+        e.preventDefault();
+        startX = e.touches[0].pageX;
+        startY = e.touches[0].pageY;
+    });
+     
+    // スワイプ中： xy座標を取得
+    t.addEventListener("touchmove", function(e) {
+        e.preventDefault();
+        moveX = e.changedTouches[0].pageX;
+        moveY = e.changedTouches[0].pageY;
+    });
+     
+    // タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
+    t.addEventListener("touchend", function(e) {
+        if (startX > moveX && startX > moveX + dist) {        // 右から左にスワイプ
+            // 右から左にスワイプした時の処理
+        }
+        else if (startX < moveX && startX + dist < moveX) {    // 左から右にスワイプ
+            // 左から右にスワイプした時の処理
+        }
+    });
+}
+
 ```

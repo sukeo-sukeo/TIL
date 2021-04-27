@@ -33,13 +33,6 @@ while (true) {
 console.log(num); // 5
 ```
 ***
-## DOMをクリアする
-```js
-while (data_wrapper.firstChild) {
-  data_wrapper.removeChild(data_wrapper.firstChild);
-  }
-```
-***
 ## `querySelector`より`getElemtntById`のが速い
 なるべく限定的なセレクターゲットメソッドを使う
 ***

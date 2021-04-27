@@ -8,3 +8,16 @@ input[type="text"] {
   margin-bottom: 16px;
 }
 ```
+***
+## ローカルのフォントファイルの適用方法
+pcにインストールして下記コードを記述
+```css
+ @font-face {
+      font-family: 'MyFont';
+      src: url('./asset/font/PixelMplus10-Regular.ttf');
+    }
+  
+    body {
+      font-family: 'MyFont';
+    }
+```
