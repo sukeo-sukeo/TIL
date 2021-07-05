@@ -14,3 +14,15 @@
   :is="currentView">
   </component>
 ```
+
+# vueでの.env
+- rootに`.env`ファイル作成
+```
+[.env] 
+VUE_APP_変数名='hogehoge'
+```
+```js
+[呼び出し]
+console.log(process.env.VUE_APP_変数名)
+```
+> vueの場合`dotenv`インストールは不要
