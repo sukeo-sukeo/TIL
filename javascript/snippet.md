@@ -72,20 +72,25 @@ npm i nodemon --save-dev
 ```
 ```js
 const express = require('express')
-const app = express()
+const cors = require('cors')
 const bodyParser = require('body-parser')
+
 const port = 3000
+
+const app = express()
+
 app.use(cors());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
-app.post('/', (req, res) => {
-  console.log(req.header);
-  console.log(req.body);
-  console.log(req.files);
-  res.send("Received POST Data!");
-});
+
+// app.post('/', (req, res) => {
+//   console.log(req.header);
+//   console.log(req.body);
+//   console.log(req.files);
+//   res.send("Received POST Data!");
+// });
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 ```
 

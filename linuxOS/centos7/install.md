@@ -111,7 +111,7 @@ yum -y install vulkan
 ```
 - アプリケーション > インターネット > にアイコンが出ている
 ***
-## webサーバーをたてる
+## webサーバーをたてる(apache)
 apacheのインストール
 ```
 yum -y install httpd
