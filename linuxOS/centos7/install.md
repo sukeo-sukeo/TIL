@@ -173,7 +173,15 @@ httpdを再起動しておく
 ```
 systemctl resutart httpd
 ```
-## ssl証明書を発行する
+## ssl証明書を発行する  
+### 下記サイトがわかりやすかったです
+- certbotの導入~証明書の取得
+https://www.server-memo.net/tips/lets-encrypt.html
+
+- 証明書のnginxへの設定
+https://xn--v6q832hwdkvom.com/post/nginx%E3%81%A8lets-encrypt%E3%81%A7%E5%B8%B8%E6%99%82ssl%E5%8C%96%E5%AF%BE%E5%BF%9C%E3%81%99%E3%82%8B/
+
+
 `certbot`か`openssl`  
 私は`certbot`でやりました  
 `epel-releaseリポジトリが必要`...なければ↓
